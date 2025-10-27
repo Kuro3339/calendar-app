@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カレンダー & タスク管理アプリ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>カレンダー & タスク管理</h1>
+        </header>
+
+        <div class="main-content">
+            <!-- カレンダーセクション -->
+            <section class="calendar-section">
+                <div class="calendar-header">
+                    <button id="prevMonth" class="nav-button">&lt;</button>
+                    <h2 id="currentMonth"></h2>
+                    <button id="nextMonth" class="nav-button">&gt;</button>
+                </div>
+                <div class="calendar-grid">
+                    <div class="day-header">日</div>
+                    <div class="day-header">月</div>
+                    <div class="day-header">火</div>
+                    <div class="day-header">水</div>
+                    <div class="day-header">木</div>
+                    <div class="day-header">金</div>
+                    <div class="day-header">土</div>
+                    <div id="calendarDays"></div>
+                </div>
+            </section>
+
+            <!-- タスク管理セクション -->
+            <section class="task-section">
+                <div class="task-header">
+                    <h2>タスク</h2>
+                    <button id="addTaskBtn" class="add-button">+ タスク追加</button>
+                </div>
+
+                <div class="selected-date-info">
+                    <p id="selectedDateText">日付を選択してください</p>
+                </div>
+
+                <div id="taskList" class="task-list"></div>
+            </section>
+        </div>
+    </div>
+
+    <!-- タスク追加/編集モーダル -->
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">タスク追加</h2>
+            <form id="taskForm">
+                <div class="form-group">
+                    <label for="taskTitle">タスク名</label>
+                    <input type="text" id="taskTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="taskDate">日付</label>
+                    <input type="date" id="taskDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="taskDescription">説明</label>
+                    <textarea id="taskDescription" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="taskPriority">優先度</label>
+                    <select id="taskPriority">
+                        <option value="low">低</option>
+                        <option value="medium" selected>中</option>
+                        <option value="high">高</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="submit-button">保存</button>
+                    <button type="button" class="cancel-button">キャンセル</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
