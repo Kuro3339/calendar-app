@@ -69,7 +69,7 @@ function renderCalendar() {
     const lastDay = new Date(year, month + 1, 0);
     const prevLastDay = new Date(year, month, 0);
 
-    const firstDayOfWeek = firstDay.getDay();
+    const firstDayOfWeek = firstDay.getDay(); // 日曜日を0とする（0=日, 6=土）
     const lastDateOfMonth = lastDay.getDate();
     const prevLastDate = prevLastDay.getDate();
 
